@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/kiddom/eslint-plugin-kiddomstyle.svg?branch=master)](https://travis-ci.org/kiddom/eslint-plugin-kiddomstyle)
+
+
 # eslint-plugin-kiddomstyle
 
 This plugin enforces architectural choices within Kiddom&#39;s React-Redux code.
