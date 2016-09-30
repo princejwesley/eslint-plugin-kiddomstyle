@@ -1,0 +1,35 @@
+# Quick boot options
+sudo: false
+
+# Ignore version tags
+branches:
+  except:
+    - /^v[0-9]/
+
+# Language options
+language: node_js
+before_install:
+  - if [[ `npm -v` != 3* ]]; then npm i -g npm@3; fi
+node_js:
+  - 4
+  - 5
+  - 6
+before_script:
+  - npm prune
+script:
+  - npm run test
+
+# # Npm publish options
+# before_deploy:
+#   - npm run build
+# deploy:
+#   provider: npm
+#   email: jfeldstein@gmail.com
+#   api_key:
+#     secure: YbgYzjySiwrPgSieehhvDkQAiJqbggVUYwi6eGuDEfHbWqoHggnuIDifWrSkw7u639RgIeQDVnzOpApsSNg1lFQ6H+vGTxyetK8dzQ4zyIBT8PDZPkl4OTJncBc3PzFYagdykTlRLB8Y6Yzpp6PQyEifxVYyMzNnndTELTRiK5DxXKmrFHFWjIt1gwjPzfrOIO0jpvP3h5gyu/+S4Flgiuja5GCBEVrfE8in2z/QcLxywGVdACX204Od1Ep8siuJvAJmUyC6D501uQ1pYDNXVN59qtHCdSfTrUmtG+PDLdeZ37U6JaiVBtoDBtmtJ62IoLy5F78q32lQBOdcREkxt7fRPUiB3Y/4T+UmRf3FgpXC04iC4DIEM2eZf044c0Ki9Mm43WZGJFAauF+r4OazuilOZGNqKWAXcn9oqe4Hzo8npY6t+6HZXRDwBu2jqSGwTOi7Y2qMxesjwungvDO8Mrg37AT+S/fedeEgbNZlTQHEbrpFK675qAY4UcuGe7i8BiJdtlnW4mdOwhrsc43Wp7Gphnlrv1ImhM/ou2x9xLK9KLC2WsOSwPaAhn262YuLewTrfPgUk3rnmPqa8epY9K/E4tQnX8hjGc/IZ46Ow2I7mQdzO8xrHNXyJd5Ab+lbHKc+cuhGINo5WqQrzXkEXrgIwLk22OtxPI0w5AZ/CN0=
+#   on:
+#     node: 6
+
+# addons:
+#   code_climate:
+#     repo_token: BOcgz3oxoOZawMRPInXYHRhcsqTJEGWevCc7LP+NE2Vj1hjIauy6Biv5tUBbkXgzFHA23XJyPZnAb02cTSvsc/YowJDUyNkTvYs5nf3DfaeWwz9x4xX+tShVKZpvISmBMrjMyMvFODX/3du28qQ7uHGlhWS/DQl/HqGNmEKKq5Db1whfG4JSDI6uAtTIn/AN8MwGTUnmAUZerJ/dq3wueaSz9W4C5uzNic2PJiMykVu4T2p/pLLEON5GmBhai//De/C0k7zffFVdWgi1Ht2M214BBGB+kD/sh5bpXfxMGA8QZ5Ztgd9VRhb7YmiFjdQ0tTbjg4xLQVrfaQRyIUxIdtcBOFUX7uVlPPiHBgqNaPz12/4STVftZ1I1+a46BKtUjHInI9EHM12zRtaX5XvSgx/cb5ZqzLRtXqerob2FhqnIC4kO2D2qubZReZrTnfv9ZBzmy2SO1u5nM7nYtGTcmkjuGO/zCQG0ScEHuCNQsZ0bGhx+Zi+QsxgIiADzg8Ml+Llx7WWr5nCYbC3J+zkf3sFNjhVcnRKZm7ehuvBxs5wXCvdIv8Nx279t8FStPzjxq4DEBZsRu85pwhcVrfVmm4Fii+wLEt+GqSlw097lpGD14yrI6vjVdMQos2EfS2sPqyOCOIPAZHZPYhro3k6QggDoFJlGKOt/N23jrr1xm1g=
